@@ -1,0 +1,23 @@
+{
+  "id": "4028700",
+  "name": "zwz_test_chatgpt",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-zwz",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2903405",
+      "name": "美女",
+      "font_class": "meinv",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "122688",
+      "name": "back",
+      "font_class": "back",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    }
+  ]
+}

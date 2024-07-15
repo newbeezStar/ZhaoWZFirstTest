@@ -1,4 +1,5 @@
 <template>
+  <Header :title="'API选择'"/>
   <div class="api-select">
     <van-list v-model:loading="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
       <van-cell v-for="item in apiList" :key="item.url" :title="item.name" />
@@ -7,8 +8,12 @@
 </template>
 
 <script>
+import Header from '/src/components/Header.vue';
 export default {
   name: "index",
+  components: {
+    Header
+  },
   setup() {
     const apiList = [
       { name: "手机号码归属地查询", url: "https://api.jisuapi.com/shouji/query" },
