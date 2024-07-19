@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 4028700 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1721035726063') format('woff2'),
-       url('iconfont.woff?t=1721035726063') format('woff'),
-       url('iconfont.ttf?t=1721035726063') format('truetype');
+       url('iconfont.woff2?t=1721187050852') format('woff2'),
+       url('iconfont.woff?t=1721187050852') format('woff'),
+       url('iconfont.ttf?t=1721187050852') format('truetype');
 }
 
 .iconfont {
@@ -15,8 +15,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-zwzright:before {
+  content: "\e775";
+}
+
+.icon-zwztoday:before {
+  content: "\e944";
+}
+
+.icon-zwzIP:before {
+  content: "\e600";
+}
+
+.icon-zwzphone:before {
+  content: "\e62f";
+}
+
 .icon-zwzmeinv:before {
   content: "\e664";
+}
+
+.icon-zwzmeinv-green:before {
+  content: "\e698";
 }
 
 .icon-zwzback:before {

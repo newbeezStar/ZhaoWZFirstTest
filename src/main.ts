@@ -3,7 +3,8 @@ import './style.css'
 import App from './App.vue'
 import Vant from 'vant';
 import 'vant/lib/index.css'; // 引入 Vant 样式文件
-import router from './router'
+import router from './router';
+import { createPinia } from 'pinia'
 
 // 创建 Vue 实例并挂载
 
@@ -13,4 +14,5 @@ import router from './router'
 const app = createApp(App);
 app.use(Vant)
 app.use(router)
+app.use(createPinia())
 app.mount("#app")

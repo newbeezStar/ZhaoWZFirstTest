@@ -7,50 +7,54 @@
  * @LastEditTime: 2021-01-03 15:53:33
  * @FilePath: /vue-jd-h5/src/router/index.js
  */
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 const indexRouter = {
-  path: '/',
-  component: () => import('../views/index.vue'),
-  redirect: '/index',
-  children: []
-}
+  path: "/",
+  component: () => import("../views/index.vue"),
+  redirect: "/index",
+  children: [],
+};
 
 const routes = [
   indexRouter,
   {
-    path: '/index',
-    name: 'Index',
-    component: () => import('../views/index.vue'),
+    path: "/index",
+    name: "Index",
+    component: () => import("../views/index.vue"),
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: () => import('../views/home/index.vue'),
+    path: "/home",
+    name: "Home",
+    component: () => import("../views/home/index.vue"),
   },
   {
-    path: '/apiSelect',
+    path: "/apiSelect",
 
-    name: 'ApiSelect',
-    component: () => import('../views/apiSelect/index.vue'),
+    name: "ApiSelect",
+    component: () => import("../views/apiSelect/index.vue"),
+  },
+  {
+    path: "/ipSearch",
+    name: "ipSearch",
+    component: () => import("/src/views/business/ipSearch.vue"),
+  },
+    {
+    path: "/historyToday",
+    name: "historyToday",
+    component: () => import("/src/views/business/historyToday.vue"),
   },
   // {
-  //   path: '/nopermission',
-  //   name: 'nopermission',
-  //   meta: {
-  //     index: 1
-  //   },
-  //   component: () => import('@/views/error/NoPermission')
+  //   path: "/phoneSearch",
+  //   name: "phoneSearch",
+  //   component: () => import("/src/views/business/phoneSearch.vue"),
   // },
   // {
-  //   path: '/*',
-  //   name: '404',
-  //   meta: {
-  //     index: 1
-  //   },
-  //   component: () => import('@/views/error/404')
+  //   path: "/phoneSearch",
+  //   name: "phoneSearch",
+  //   component: () => import("/src/views/business/phoneSearch.vue"),
   // },
-]
+];
 
 // const routerContext = require.context('./modules', true, /\.js$/)
 // routerContext.keys().forEach(route => {
@@ -60,5 +64,5 @@ const routes = [
 
 export default createRouter({
   history: createWebHistory(),
-  routes
-})
+  routes,
+});

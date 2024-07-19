@@ -1,7 +1,9 @@
-<script lang="ts">
+<script lang="js">
 // import { ref } from 'vue'
 import { showToast } from 'vant';
-import img1 from '/src/assets/imgs/img1.jpg';
+import cyc from '/src/assets/imgs/cyc.jpg';
+import zwz from '/src/assets/imgs/zwz.jpg';
+import { userInfo } from '/src/store/index';
 // import { defineProps } from 'vue';
 export default {
   props: {
@@ -16,14 +18,23 @@ export default {
     }
   },
   setup() {
-
+    let user = userInfo();
+    return {
+      user
+    }
   },
   methods: {
     showToast() {
+      let user = userInfo();
       showToast({
         message: '这是谁？',
-        icon: img1,
+        icon: user.isLogin ? zwz : cyc,
       });
+      user.isLogin = !user.isLogin;
+      user.token = user.isLogin ? 'e5fa5b782017fab6' : '';
+    },
+    back() {
+      window.history.go(-1);
     }
   }
 }
@@ -33,9 +44,10 @@ export default {
 
 <template>
   <div class="title">
-    <i class="iconfont icon-zwzback mx-1" v-if="showBack" @click="$emit('back')"> </i>
+    <i class="iconfont icon-zwzback mx-1 " v-if="showBack" @click="back"> </i>
     <p>{{ title }}</p>
-    <i class="iconfont icon-zwzmeinv mx-1" @click="showToast"> </i>
+    <i class="iconfont  mx-1 " :class="{ 'icon-zwzmeinv': !user.isLogin, 'icon-zwzmeinv-green': user.isLogin }"
+      @click="showToast"> </i>
   </div>
 </template>
 
