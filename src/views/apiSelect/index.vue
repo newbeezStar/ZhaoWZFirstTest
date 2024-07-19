@@ -1,5 +1,6 @@
 <template>
   <Header :title="'API选择'" />
+  <ClickAnim />
   <div class="w-full">
     <div class=" h-20  my-1 bg-cover bg-center" v-for="(item, index) in apiList" :key="item.url"
       style="background-image:url('/src/assets/imgs/bg1.png')" @click=doSelect(item)>
@@ -18,12 +19,14 @@
 import Header from '/src/components/Header.vue';
 import { userInfo, busiInfo } from '/src/store/index';
 import { showToast } from 'vant';
+import ClickAnim from '/src/components/ClickAnim.vue';
 // import bg1 from '/src/assets/imgs/bg1.png';
 // import bg2 from '/src/assets/imgs/bg2.png';
 export default {
   name: "index",
   components: {
-    Header
+    Header,
+    ClickAnim
   },
   setup() {
     const apiList = [
